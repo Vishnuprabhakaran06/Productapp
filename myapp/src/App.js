@@ -1,10 +1,11 @@
 import logo from './logo.svg';
-import './App.css';
-import ProductCRUD from './components/Productdashboard';
+
+import './ProductDashboard.css';
+import ProductDashboard from './ProductDashboard';
 
 function App() {
   return (
-    <ProductCRUD/>
+    <ProductDashboard/>
   );
 }
 
