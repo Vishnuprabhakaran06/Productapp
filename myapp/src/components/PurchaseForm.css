@@ -1,0 +1,116 @@
+/* Form container */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 20px 25px;
+    background-color: #fff;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 90%;
+    margin: 20px auto;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    font-family: 'Arial', sans-serif;
+    transition: all 0.2s ease;
+}
+
+/* Form title */
+.form-container h3 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* Labels */
+.form-container label {
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 4px;
+}
+
+/* Inputs and selects */
+.form-container input,
+.form-container select {
+    padding: 10px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+}
+
+.form-container input:focus,
+.form-container select:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+/* Buttons container */
+.form-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 16px;
+    justify-content: space-between;
+}
+
+/* Save button */
+.form-buttons button[type="submit"] {
+    flex: 1;
+    padding: 10px;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.form-buttons button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Cancel button */
+.form-buttons .cancel-btn {
+    flex: 1;
+    padding: 10px;
+    background-color: #f44336;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.form-buttons .cancel-btn:hover {
+    background-color: #e53935;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .form-container {
+        padding: 16px;
+        width: 95%;
+    }
+
+    .form-buttons {
+        flex-direction: column;
+    }
+
+    .form-buttons button {
+        width: 100%;
+    }
+
+    .form-container h3 {
+        font-size: 1.3rem;
+    }
+
+    .form-container input,
+    .form-container select {
+        font-size: 0.95rem;
+        padding: 8px;
+    }
+}
