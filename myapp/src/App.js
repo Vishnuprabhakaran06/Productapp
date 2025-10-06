@@ -1,5 +1,3 @@
-import logo from './logo.svg';
-
 import './ProductDashboard.css';
 import ProductDashboard from './ProductDashboard';
 
