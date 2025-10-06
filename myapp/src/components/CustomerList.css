@@ -1,0 +1,107 @@
+/* Table container */
+.list-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Table header */
+.list-table thead {
+    background-color: #ff6f61;
+    color: #fff;
+}
+
+.list-table th,
+.list-table td {
+    text-align: left;
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Table rows hover */
+.list-table tbody tr:hover {
+    background-color:none;
+}
+
+/* Action buttons */
+.list-table button {
+    padding: 6px 10px;
+    margin-right: 6px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+/* Edit button */
+.list-table button:first-child {
+    background-color: #2196F3;
+    color: #fff;
+}
+
+.list-table button:first-child:hover {
+    background-color: #1976D2;
+}
+
+/* Delete button */
+.list-table button:last-child {
+    background-color: #f44336;
+    color: #fff;
+}
+
+.list-table button:last-child:hover {
+    background-color: #e53935;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .list-table thead {
+        display: none; /* Hide table header on small screens */
+    }
+
+    .list-table, 
+    .list-table tbody, 
+    .list-table tr, 
+    .list-table td {
+        display: block;
+        width: 100%;
+    }
+
+    .list-table tr {
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 10px;
+    }
+
+    .list-table td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+
+    .list-table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 15px;
+        width: calc(50% - 30px);
+        font-weight: 600;
+        text-align: left;
+        color: #555;
+    }
+
+    .list-table button {
+        margin: 5px 5px 0 0;
+        width: 48%;
+    }
+}
+
+/* Small screens button adjustments */
+@media (max-width: 480px) {
+    .list-table button {
+        width: 100%;
+        margin: 5px 0 0 0;
+    }
+}
