@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const productRoutes = require('./routes/products');
-
+const customerRoutes=require('./routes/customers');
+const purchaseRoutes=require('./routes/purchases');
 dotenv.config();
 
 const app = express();
@@ -12,6 +13,9 @@ app.use(express.json());
 
 // Routes
 app.use('/api/products', productRoutes);
+app.use('/api/customers', customerRoutes);
+app.use('/api/purchases', purchaseRoutes);
+
 
 // MongoDB Atlas connection
 mongoose.connect(process.env.MONGO_URI, {
