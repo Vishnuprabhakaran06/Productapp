@@ -1,7 +1,21 @@
 import React from 'react';
 import './PurchaseList.css'
-export default function PurchaseList({ purchases, customers, products, onEdit, onDelete }) {
+
+export default function PurchaseList({ purchases, customers, products, onEdit, onDelete, user }) {
     if (!purchases.length) return <p>No purchases found</p>;
+
+    const canModify = user?.role !== 'viewer'; // viewer cannot edit/delete
+
+    const handleEdit = (p) => {
+        if (!onEdit || !canModify) return alert("You can't access it");
+        onEdit(p);
+    };
+
+    const handleDelete = (p) => {
+        if (!onDelete || !canModify) return alert("You can't access it");
+        onDelete(p._id);
+    };
+
     return (
         <table className="list-table">
             <thead>
@@ -18,10 +32,9 @@ export default function PurchaseList({ purchases, customers, products, onEdit, o
                             <td data-label="Quantity">{p.quantity}</td>
                             <td data-label="Date">{new Date(p.date).toLocaleDateString()}</td>
                             <td data-label="Actions">
-                                <button onClick={() => onEdit(p)}>Edit</button>
-                                <button onClick={() => onDelete(p._id)}>Delete</button>
+                                {canModify && onEdit && <button onClick={() => handleEdit(p)}>Edit</button>}
+                                {canModify && onDelete && <button onClick={() => handleDelete(p)}>Delete</button>}
                             </td>
-
                         </tr>
                     );
                 })}
