@@ -79,3 +79,27 @@
     color: var(--accent);
     cursor: pointer;
 }
+/* Role select field styling like inputs */
+.auth-form select {
+    padding: 0.6rem 0.8rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(26,28,38,0.7);
+    color: #fff;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+    margin-top: 0.25rem;
+}
+
+.auth-form select:focus {
+    outline: none;
+    border-color: var(--accent);
+    background: rgba(26,28,38,0.9);
+    color: #fff;
+}
+
+/* Optional: arrow color (for better contrast) */
+.auth-form select option {
+    color: #000; /* text color for dropdown options */
+    background: #fff; /* background of options when dropdown opens */
+}
